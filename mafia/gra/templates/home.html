@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <form method="POST" action="">
   {% csrf_token %} {{form.as_p}}
-  <input type="submit" class="btn-primary" value="Nowa gra" />
+  <input type="submit" class="btn btn-primary btn-lg" class="btn btn-secondary btn-lg" value="Nowa gra" />
+</form>
+<form method="POST" action="">
+  {% csrf_token %} {{form.as_p}}
+  <button type="button" class="btn btn-primary btn-lg" class="btn btn-secondary btn-lg">Instrukcja</button>
 </form>
 {% endblock %}

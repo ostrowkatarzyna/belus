@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-t2vi=mkz-rik-86d-if-3)1%#3!5#^jwfei*^u)487lb4)b6z%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.yourdomain.com', '.localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -86,7 +86,8 @@ DATABASES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS=[]
+ALLOWED_ORIGINS = ['http://*', 'https://*']
+CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

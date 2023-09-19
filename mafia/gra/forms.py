@@ -8,4 +8,4 @@ class GraTworzForm(forms.ModelForm):
         fields =[]
 
 class GraTworzGraczyForm(forms.Form):
-    nazwa = forms.CharField(label="", widget=forms.TextInput(attrs={"placeholder": "Wpisz imię"}))
+    nazwa1 = forms.CharField(label="", widget=forms.TextInput(attrs={"placeholder": "Wpisz imię"}))

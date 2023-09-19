@@ -28,3 +28,19 @@ class Gracz(models.Model):
 
   def __str__(self):
     return f"{self.nazwa} - {self.idRola}"
+  
+class Runda(models.Model):
+  numer = models.IntegerField()
+  idGra = models.ForeignKey('Gra', on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.numer} - {self.idGra}"
+
+class Ruch(models.Model):
+  typ = models.IntegerField()
+  idRola = models.ForeignKey('Rola', on_delete= models.CASCADE)
+  idGracz = models.ForeignKey('Gracz', on_delete=models.CASCADE)
+  idRunda = models.ForeignKey('Runda', on_delete=models.CASCADE)
+  
+  def __str__(self):
+    return f"{self.typ} - {self.idRola} - {self.idGracz} - {self.idRunda}"
