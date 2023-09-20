@@ -11,4 +11,8 @@
 <div class="d-grid gap-2"width: 300px;>
   <button class="btn btn-primary" type="button">Przydziel role do graczy</button>
 </div>
+{% if 'users' in request.GET %}
+    users exists
+{% endif %}
 {% endblock %}
+

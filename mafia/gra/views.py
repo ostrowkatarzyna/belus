@@ -12,7 +12,7 @@ from .constant import *
 @csrf_protect
 # Widok Nowa gra (1)
 def home(request):
-  template = loader.get_template('home.html')
+  template = loader.POST_template('home.html')
   return HttpResponse(template.render())
 
 def gra_dodaj(request):
@@ -30,12 +30,16 @@ def gra_dodaj(request):
 
 def gra_dodaj_graczy(request):
    #minumu 6 maksimum 16
-  gracze={}
-  for i in range(0,min_graczy):
-    gracze[i]=''
-    print(gracze)
-    print(i)
-    #gracze[] = ''
+ # print(request.POST['users'])
+ # 
+  if request.method == 'GET' and 'users' in request.GET:
+    gracze=request.GET['users']
+    print("Co za typ")
+  else:
+    gracze={}
+    for i in range(0,min_graczy):
+      gracze[i]=''
+  
   context = {
     'gracze': gracze
   }

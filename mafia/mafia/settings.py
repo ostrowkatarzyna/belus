@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gra',
-    'bootstrap5'
+    'bootstrap5',
+    'django_static_jquery'
 ]
 
 MIDDLEWARE = [
